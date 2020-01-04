@@ -14,12 +14,12 @@ const string FileName = "Guild.csv";
 int main()
 {
 	guild g;
-	int first_flag = 0; //×÷ÎªÒ»¼¶²Ëµ¥Ñ¡Ôñ±êÖ¾
-	int second_flag = 1; // ×÷Îª¶ş¼¶²Ëµ¥Ñ¡Ôñ±êÖ¾
-	int third_flag = 1; //Èı¼¶²Ëµ¥Àë¿ª±êÖ¾Î»£¬0ÎªÀë¿ª
-	int exit_flag = 1; //Àë¿ªÑ¡Ôñ±êÖ¾£¬·Ç1ÎªÀë¿ª
-	string t_name; //ÓÃÓÚ²éÕÒµÄĞÕÃû
-	//ÏµÍ³Æô¶¯
+	int first_flag = 0; //ä½œä¸ºä¸€çº§èœå•é€‰æ‹©æ ‡å¿—
+	int second_flag = 1; // ä½œä¸ºäºŒçº§èœå•é€‰æ‹©æ ‡å¿—
+	int third_flag = 1; //ä¸‰çº§èœå•ç¦»å¼€æ ‡å¿—ä½ï¼Œ0ä¸ºç¦»å¼€
+	int exit_flag = 1; //ç¦»å¼€é€‰æ‹©æ ‡å¿—ï¼Œé1ä¸ºç¦»å¼€
+	string t_name; //ç”¨äºæŸ¥æ‰¾çš„å§“å
+	//ç³»ç»Ÿå¯åŠ¨
 	system_start();
 	g.load(FileName);
 	loading();
@@ -28,7 +28,7 @@ int main()
 		first_flag = 0;
 		second_flag = 1;
 		first_list();
-		cin >> first_flag; //Ò»¼¶²Ëµ¥Ñ¡Ïî
+		cin >> first_flag; //ä¸€çº§èœå•é€‰é¡¹
 		switch (first_flag)
 		{
 		case 1: 
@@ -36,7 +36,7 @@ int main()
 			while (1)
 			{
 				g.display();
-				cout << "ÊäÈë0ÍË³ö" << endl;
+				cout << "è¾“å…¥0é€€å‡º" << endl;
 				cin >> second_flag;
 				if (second_flag == 0)break;
 			}
@@ -45,86 +45,86 @@ int main()
 		{
 			while (1)
 			{
-				third_flag = 1; //Àë¿ª±êÖ¾ÖÃ1
+				third_flag = 1; //ç¦»å¼€æ ‡å¿—ç½®1
 				second_list();
 				cin >> second_flag;
 				switch (second_flag)
 				{
-				case 1: //½£Ê¿Èë»á
+				case 1: //å‰‘å£«å…¥ä¼š
 				{
 					while (third_flag)
 					{
 						g.addS();
-						cout << "ÊäÈë0·µ»ØÉÏÒ»¼¶²Ëµ¥" << endl;
+						cout << "è¾“å…¥0è¿”å›ä¸Šä¸€çº§èœå•" << endl;
 						cin >> third_flag;
 					}
 				}break;
-				case 2: //½£Ê¿ÍË»á
+				case 2: //å‰‘å£«é€€ä¼š
 				{
 					while (third_flag)
 					{
 						g.delS();
-						cout << "ÊäÈë0·µ»ØÉÏÒ»¼¶²Ëµ¥" << endl;
+						cout << "è¾“å…¥0è¿”å›ä¸Šä¸€çº§èœå•" << endl;
 						cin >> third_flag;
 					}
 				}break;
-				case 3: //Ä§·¨Ê¦Èë»á
+				case 3: //é­”æ³•å¸ˆå…¥ä¼š
 				{
 					while (third_flag)
 					{
 						g.addM();
-						cout << "ÊäÈë0·µ»ØÉÏÒ»¼¶²Ëµ¥" << endl;
+						cout << "è¾“å…¥0è¿”å›ä¸Šä¸€çº§èœå•" << endl;
 						cin >> third_flag;
 					}
 				}break;
-				case 4: //Ä§·¨Ê¦ÍË»á
+				case 4: //é­”æ³•å¸ˆé€€ä¼š
 				{
 					while (third_flag)
 					{
 						g.delM();
-						cout << "ÊäÈë0·µ»ØÉÏÒ»¼¶²Ëµ¥" << endl;
+						cout << "è¾“å…¥0è¿”å›ä¸Šä¸€çº§èœå•" << endl;
 						cin >> third_flag;
 					}
 				}break;
-				case 5: //³ÉÔ±½úÉı
+				case 5: //æˆå‘˜æ™‹å‡
 				{
 					while (third_flag)
 					{
 						g.promotion();
-						cout << "ÊäÈë0·µ»ØÉÏÒ»¼¶²Ëµ¥" << endl;
+						cout << "è¾“å…¥0è¿”å›ä¸Šä¸€çº§èœå•" << endl;
 						cin >> third_flag;
 					}
 				}break;
-				case 6: //ĞŞ¸Ä»á³¤ĞÅÏ¢
+				case 6: //ä¿®æ”¹ä¼šé•¿ä¿¡æ¯
 				{
 					while (third_flag)
 					{
 						g.modiMA();
-						cout << "ÊäÈë0·µ»ØÉÏÒ»¼¶²Ëµ¥" << endl;
+						cout << "è¾“å…¥0è¿”å›ä¸Šä¸€çº§èœå•" << endl;
 						cin >> third_flag;
 					}
 				}break;
-				case 7: //ĞŞ¸Ä½£Ê¿ĞÅÏ¢
+				case 7: //ä¿®æ”¹å‰‘å£«ä¿¡æ¯
 				{
 					while (third_flag)
 					{
 						g.modiS();
-						cout << "ÊäÈë0·µ»ØÉÏÒ»¼¶²Ëµ¥" << endl;
+						cout << "è¾“å…¥0è¿”å›ä¸Šä¸€çº§èœå•" << endl;
 						cin >> third_flag;
 					}
 				}break;
-				case 8: //ĞŞ¸ÄÄ§·¨Ê¦ĞÅÏ¢
+				case 8: //ä¿®æ”¹é­”æ³•å¸ˆä¿¡æ¯
 				{
 					while (third_flag)
 					{
 						g.modiM();
-						cout << "ÊäÈë0·µ»ØÉÏÒ»¼¶²Ëµ¥" << endl;
+						cout << "è¾“å…¥0è¿”å›ä¸Šä¸€çº§èœå•" << endl;
 						cin >> third_flag;
 					}
 				}break;
 				default:break;
 				}
-				if (second_flag == 9)break; //·µ»ØÉÏÒ»¼¶²Ëµ¥½Úµã
+				if (second_flag == 9)break; //è¿”å›ä¸Šä¸€çº§èœå•èŠ‚ç‚¹
 			}
 
 		}break;
@@ -135,9 +135,9 @@ int main()
 				search();
 				cin >> t_name;
 				g.search(t_name);
-				cout << "\nĞèÒª¼ÌĞøÊ¹ÓÃ²éÑ¯·şÎñß÷£¿\nÊäÈë0ÍË³öß÷" << endl;
+				cout << "\néœ€è¦ç»§ç»­ä½¿ç”¨æŸ¥è¯¢æœåŠ¡å–µï¼Ÿ\nè¾“å…¥0é€€å‡ºå–µ" << endl;
 				cin >> second_flag;
-				if (second_flag == 0)break; //ÅĞ¶Ï²¢·µ»ØÉÏ¼¶²Ëµ¥½Úµã
+				if (second_flag == 0)break; //åˆ¤æ–­å¹¶è¿”å›ä¸Šçº§èœå•èŠ‚ç‚¹
 			}
 			
 		}; break;
