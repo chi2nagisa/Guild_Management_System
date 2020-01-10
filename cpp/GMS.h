@@ -3,15 +3,15 @@
 
 using namespace std;
 
-inline uint MAXS() // ×î´ó½£Ê¿ÊıÁ¿
+inline uint MAXS() // æœ€å¤§å‰‘å£«æ•°é‡
 {
 	return 100;
 }
-inline uint MAXM() //×î´óÄ§·¨Ê¦ÊıÁ¿
+inline uint MAXM() //æœ€å¤§é­”æ³•å¸ˆæ•°é‡
 {
 	return 100;
 }
-uint stringToNum(const string& str) //½«×Ö·û´®×ª»»Îªuint
+uint stringToNum(const string& str) //å°†å­—ç¬¦ä¸²è½¬æ¢ä¸ºuint
 {
 	istringstream iss(str);
 	uint num;
@@ -29,9 +29,9 @@ public:
 	virtual uint getAge();
 	virtual uint getLevel();
 	virtual uint getHP();
-	virtual void modi() = 0; // ´¿Ğéº¯Êı
-	virtual void printAtt() = 0; // ´¿Ğéº¯Êı
-	virtual void printAtt(string s) = 0; // ÒÔÁĞ·½ÏòÊä³öĞÅÏ¢
+	virtual void modi() = 0; // çº¯è™šå‡½æ•°
+	virtual void printAtt() = 0; // çº¯è™šå‡½æ•°
+	virtual void printAtt(string s) = 0; // ä»¥åˆ—æ–¹å‘è¾“å‡ºä¿¡æ¯
 
 protected:
 	string Name;
@@ -77,13 +77,13 @@ class saber :virtual public adventure
 public:
 	saber();
 	saber(string newName, uint newAge, uint newLevel, uint newHP, uint newATK);
-	saber(saber &s); //¿½±´¹¹Ôìº¯Êı
+	saber(saber &s); //æ‹·è´æ„é€ å‡½æ•°
 	~saber();
-	uint getATK(); //»ñÈ¡¹¥»÷Á¦
-	void modi(); //ÓÃÓÚÆÕÍ¨ĞŞ¸Ä
-	void modi(string newName, uint newAge, uint newLevel, uint newHP, uint newATK); //ÓÃÓÚĞÂ½¨ºóµÄÊäÈë
+	uint getATK(); //è·å–æ”»å‡»åŠ›
+	void modi(); //ç”¨äºæ™®é€šä¿®æ”¹
+	void modi(string newName, uint newAge, uint newLevel, uint newHP, uint newATK); //ç”¨äºæ–°å»ºåçš„è¾“å…¥
 	void printAtt();
-	void printAtt(string s); //ÒÔĞĞµÄĞÎÊ½ÏÔÊ¾
+	void printAtt(string s); //ä»¥è¡Œçš„å½¢å¼æ˜¾ç¤º
 
 protected:
 	uint ATK;
@@ -117,7 +117,7 @@ void saber::modi()
 	uint temp_i, temp_select;
 	temp_select = dis_prolist(0);
 	property p = p_list[temp_select - 1];
-	cout << "ÇëÊäÈë¸óÏÂÒªĞŞ¸ÄµÄÄÚÈİ" << endl;
+	cout << "è¯·è¾“å…¥é˜ä¸‹è¦ä¿®æ”¹çš„å†…å®¹" << endl;
 	switch (p)
 	{
 	case name:cin >> temp_n; Name = temp_n;
@@ -130,7 +130,7 @@ void saber::modi()
 		break;
 	case atk:cin >> temp_i; ATK = temp_i;
 		break;
-	default:cout << "¹Ø¼ü×Ö´íÎó" << endl;
+	default:cout << "å…³é”®å­—é”™è¯¯" << endl;
 		break;
 	}
 }
@@ -144,11 +144,11 @@ void saber::modi(string newName, uint newAge, uint newLevel, uint newHP, uint ne
 }
 void saber::printAtt()
 {
-	cout << "ĞÕÃû£º" << Name << endl;
-	cout << "ÄêÁä£º" << Age << endl;
-	cout << "µÈ¼¶£º" << Level << endl;
-	cout << "HP£º" << HP << endl;
-	cout << "ATK£º" << ATK << endl;
+	cout << "å§“åï¼š" << Name << endl;
+	cout << "å¹´é¾„ï¼š" << Age << endl;
+	cout << "ç­‰çº§ï¼š" << Level << endl;
+	cout << "HPï¼š" << HP << endl;
+	cout << "ATKï¼š" << ATK << endl;
 }
 void saber::printAtt(string s)
 {
@@ -167,7 +167,7 @@ public:
 	void modi();
 	void modi(string newName, uint newAge, uint newLevel, uint newHP, uint newMGA);
 	void printAtt();
-	void printAtt(string s); //ÒÔĞĞµÄĞÎÊ½ÏÔÊ¾
+	void printAtt(string s); //ä»¥è¡Œçš„å½¢å¼æ˜¾ç¤º
 
 protected:
 	uint MGA;
@@ -201,7 +201,7 @@ void magician::modi()
 	uint temp_i, temp_select;
 	temp_select = dis_prolist(1);
 	property p = p_list[temp_select - 1];
-	cout << "ÇëÊäÈëÒªĞŞ¸ÄµÄÄÚÈİ" << endl;
+	cout << "è¯·è¾“å…¥è¦ä¿®æ”¹çš„å†…å®¹" << endl;
 	switch (p)
 	{
 	case name:cin >> temp_n; Name = temp_n;
@@ -214,7 +214,7 @@ void magician::modi()
 		break;
 	case mga:cin >> temp_i; MGA = temp_i;
 		break;
-	default:cout << "¹Ø¼ü×Ö´íÎó" << endl;
+	default:cout << "å…³é”®å­—é”™è¯¯" << endl;
 		break;
 	}
 }
@@ -228,11 +228,11 @@ void magician::modi(string newName, uint newAge, uint newLevel, uint newHP, uint
 }
 void magician::printAtt()
 {
-	cout << "ĞÕÃû£º" << Name << endl;
-	cout << "ÄêÁä£º" << Age << endl;
-	cout << "µÈ¼¶£º" << Level << endl;
-	cout << "HP£º" << HP << endl;
-	cout << "MGA£º" << MGA << endl;
+	cout << "å§“åï¼š" << Name << endl;
+	cout << "å¹´é¾„ï¼š" << Age << endl;
+	cout << "ç­‰çº§ï¼š" << Level << endl;
+	cout << "HPï¼š" << HP << endl;
+	cout << "MGAï¼š" << MGA << endl;
 }
 void magician::printAtt(string s)
 {
@@ -244,8 +244,8 @@ class master : public saber, public magician
 public:
 	master();
 	master(string newName, uint newAge, uint newlevel, uint newHP, uint newATK, uint newMGA);
-	master(saber &s); //¿½±´¹¹Ôìº¯Êı
-	master(magician &m); //¿½±´¹¹Ôìº¯Êı
+	master(saber &s); //æ‹·è´æ„é€ å‡½æ•°
+	master(magician &m); //æ‹·è´æ„é€ å‡½æ•°
 	~master();
 	void modi();
 	void modi(string newName, uint newAge, uint newLevel, uint newHP, uint newATK, uint newMGA);
@@ -274,7 +274,7 @@ master::master(saber &s)
 	Level = s.getLevel();
 	HP = s.getHP();
 	ATK = s.getATK();
-	MGA = 50; //³õÊ¼»¯Îª50
+	MGA = 50; //åˆå§‹åŒ–ä¸º50
 }
 master::master(magician &m)
 {
@@ -282,7 +282,7 @@ master::master(magician &m)
 	Age = m.getAge();
 	Level = m.getLevel();
 	HP = m.getHP();
-	ATK = 50; //³õÊ¼»¯Îª50
+	ATK = 50; //åˆå§‹åŒ–ä¸º50
 	MGA = m.getMGA();
 }
 master::~master()
@@ -295,7 +295,7 @@ void master::modi()
 	uint temp_i, temp_select;
 	temp_select = dis_prolist(2);
 	property p = p_list[temp_select - 1];
-	cout << "ÇëÊäÈë¸óÏÂÒªĞŞ¸ÄµÄÄÚÈİ" << endl;
+	cout << "è¯·è¾“å…¥é˜ä¸‹è¦ä¿®æ”¹çš„å†…å®¹" << endl;
 	switch (p)
 	{
 	case name:cin >> temp_n; Name = temp_n;
@@ -310,7 +310,7 @@ void master::modi()
 		break;
 	case mga:cin >> temp_i; MGA = temp_i;
 		break;
-	default:cout << "¹Ø¼ü×Ö´íÎó" << endl;
+	default:cout << "å…³é”®å­—é”™è¯¯" << endl;
 		break;
 	}
 }
@@ -325,12 +325,12 @@ void master::modi(string newName, uint newAge, uint newLevel, uint newHP, uint n
 }
 void master::printAtt()
 {
-	cout << "ĞÕÃû£º" << Name << endl;
-	cout << "ÄêÁä£º" << Age << endl;
-	cout << "µÈ¼¶£º" << Level << endl;
-	cout << "HP£º" << HP << endl;
-	cout << "ATK£º" << ATK << endl;
-	cout << "MGA£º" << MGA << endl;
+	cout << "å§“åï¼š" << Name << endl;
+	cout << "å¹´é¾„ï¼š" << Age << endl;
+	cout << "ç­‰çº§ï¼š" << Level << endl;
+	cout << "HPï¼š" << HP << endl;
+	cout << "ATKï¼š" << ATK << endl;
+	cout << "MGAï¼š" << MGA << endl;
 }
 void master::printAtt(string s)
 {
@@ -355,10 +355,10 @@ public:
 	void delS(string s_name);
 	void delM();
 	void delM(string m_name);
-	void promotion(); // ½«Ä³Ò»¸ö¶ÓÔ±ÉıÖ°Îª»á³¤
+	void promotion(); // å°†æŸä¸€ä¸ªé˜Ÿå‘˜å‡èŒä¸ºä¼šé•¿
 	void searchS(string t_name);
 	void searchM(string t_name);
-	void search(string t_name); //¶Ô³ı»á³¤ÍâµÄÈËÔ±½øĞĞËÑË÷
+	void search(string t_name); //å¯¹é™¤ä¼šé•¿å¤–çš„äººå‘˜è¿›è¡Œæœç´¢
 	void load(string FileName);
 	void save(string FileName);
 	void displayMa();
@@ -390,7 +390,7 @@ void guild::addMA()
 		temp = pro_in(2);
 		ma.modi(temp.p_name, temp.p_age, temp.p_level, temp.p_hp, temp.p_atk, temp.p_mga);
 	}
-	else cout << "ÒÑ´æÔÚ»á³¤£¬Ìí¼ÓÊ§°Ü£¡" << endl;
+	else cout << "å·²å­˜åœ¨ä¼šé•¿ï¼Œæ·»åŠ å¤±è´¥ï¼" << endl;
 }
 void guild::addMA(string newName, uint newAge, uint newLevel, uint newHP, uint newATK, uint newMGA)
 {
@@ -398,11 +398,11 @@ void guild::addMA(string newName, uint newAge, uint newLevel, uint newHP, uint n
 	{
 		ma.modi(newName, newAge, newLevel, newHP, newATK, newMGA);
 	}
-	else cout << "ÒÑ´æÔÚ»á³¤£¬Ìí¼ÓÊ§°Ü£¡" << endl;
+	else cout << "å·²å­˜åœ¨ä¼šé•¿ï¼Œæ·»åŠ å¤±è´¥ï¼" << endl;
 }
 void guild::addS()
 {
-	cout << "ÕıÔÚÌí¼Ó½£Ê¿" << endl;
+	cout << "æ­£åœ¨æ·»åŠ å‰‘å£«" << endl;
 	if (s_num < MAXS())
 	{
 		pro temp;
@@ -410,7 +410,7 @@ void guild::addS()
 		s[s_num].modi(temp.p_name, temp.p_age, temp.p_level, temp.p_hp, temp.p_atk);
 		s_num++;
 	}
-	else cout << "ÈËÊıÒÑÂú£¬ÎŞ·¨Ìí¼Ó£¡" << endl;
+	else cout << "äººæ•°å·²æ»¡ï¼Œæ— æ³•æ·»åŠ ï¼" << endl;
 }
 void guild::addS(string newName, uint newAge, uint newLevel, uint newHP, uint newATK)
 {
@@ -419,11 +419,11 @@ void guild::addS(string newName, uint newAge, uint newLevel, uint newHP, uint ne
 		s[s_num].modi(newName, newAge, newLevel, newHP, newATK);
 		s_num++;
 	}
-	else cout << "ÈËÊıÒÑÂú£¬ÎŞ·¨Ìí¼Ó£¡" << endl;
+	else cout << "äººæ•°å·²æ»¡ï¼Œæ— æ³•æ·»åŠ ï¼" << endl;
 }
 void guild::addM()
 {
-	cout << "ÕıÔÚÌí¼ÓÄ§·¨Ê¦" << endl;
+	cout << "æ­£åœ¨æ·»åŠ é­”æ³•å¸ˆ" << endl;
 	if (m_num < MAXM())
 	{
 		pro temp;
@@ -431,7 +431,7 @@ void guild::addM()
 		m[m_num].modi(temp.p_name, temp.p_age, temp.p_level, temp.p_hp, temp.p_mga);
 		m_num++;
 	}
-	else cout << "ÈËÊıÒÑÂú£¬ÎŞ·¨Ìí¼Ó" << endl;
+	else cout << "äººæ•°å·²æ»¡ï¼Œæ— æ³•æ·»åŠ " << endl;
 }
 void guild::addM(string newName, uint newAge, uint newLevel, uint newHP, uint newMGA)
 {
@@ -440,34 +440,34 @@ void guild::addM(string newName, uint newAge, uint newLevel, uint newHP, uint ne
 		m[m_num].modi(newName, newAge, newLevel, newHP, newMGA);
 		m_num++;
 	}
-	else cout << "ÈËÊıÒÑÂú£¬ÎŞ·¨Ìí¼Ó£¡" << endl;
+	else cout << "äººæ•°å·²æ»¡ï¼Œæ— æ³•æ·»åŠ ï¼" << endl;
 }
 void guild::modiMA()
 {
 	pro temp;
-	cout << "ÕıÔÚĞŞ¸Ä»á³¤ĞÅÏ¢" << endl;
-	cout << "ÇëÊäÈëÄêÁä" << endl;
+	cout << "æ­£åœ¨ä¿®æ”¹ä¼šé•¿ä¿¡æ¯" << endl;
+	cout << "è¯·è¾“å…¥å¹´é¾„" << endl;
 	cin >> temp.p_age;
-	cout << "ÇëÊäÈëµÈ¼¶" << endl;
+	cout << "è¯·è¾“å…¥ç­‰çº§" << endl;
 	cin >> temp.p_level;
-	cout << "ÇëÊäÈëÉúÃüÖµ" << endl;
+	cout << "è¯·è¾“å…¥ç”Ÿå‘½å€¼" << endl;
 	cin >> temp.p_hp;
-	cout << "ÇëÊäÈëÎïÀí¹¥»÷Öµ" << endl;
+	cout << "è¯·è¾“å…¥ç‰©ç†æ”»å‡»å€¼" << endl;
 	cin >> temp.p_atk;
-	cout << "ÇëÊäÈëÄ§·¨¹¥»÷Öµ" << endl;
+	cout << "è¯·è¾“å…¥é­”æ³•æ”»å‡»å€¼" << endl;
 	cin >> temp.p_mga;
 	ma.modi(ma.getName(), temp.p_age, temp.p_level, temp.p_hp, temp.p_atk, temp.p_mga);
-	cout << "ĞŞ¸Ä³É¹¦" << endl;
+	cout << "ä¿®æ”¹æˆåŠŸ" << endl;
 }
 void guild::modiS()
 {
 	pro temp;
 	uint order = 0;
 	int search_flag = 0;
-	cout << "ÕıÔÚĞŞ¸Ä½£Ê¿ĞÅÏ¢" << endl;
+	cout << "æ­£åœ¨ä¿®æ”¹å‰‘å£«ä¿¡æ¯" << endl;
 	pro_title();
 	displayS();
-	cout << "ÇëÊäÈëÒªĞŞ¸ÄÊôĞÔµÄ½£Ê¿ĞÕÃû" << endl;
+	cout << "è¯·è¾“å…¥è¦ä¿®æ”¹å±æ€§çš„å‰‘å£«å§“å" << endl;
 	cin >> temp.p_name;
 	for (order = 0; order < s_num; order++)
 	{
@@ -479,28 +479,28 @@ void guild::modiS()
 	}
 	if (search_flag)
 	{
-		cout << "\nÒÑÕÒµ½Ãû³Æ: " << temp.p_name << " µÄ½£Ê¿£¬ÕıÔÚ½øĞĞĞŞ¸Ä" << endl;
-		cout << "ÇëÊäÈëÄêÁä" << endl;
+		cout << "\nå·²æ‰¾åˆ°åç§°: " << temp.p_name << " çš„å‰‘å£«ï¼Œæ­£åœ¨è¿›è¡Œä¿®æ”¹" << endl;
+		cout << "è¯·è¾“å…¥å¹´é¾„" << endl;
 		cin >> temp.p_age;
-		cout << "ÇëÊäÈëµÈ¼¶" << endl;
+		cout << "è¯·è¾“å…¥ç­‰çº§" << endl;
 		cin >> temp.p_level;
-		cout << "ÇëÊäÈëÉúÃüÖµ" << endl;
+		cout << "è¯·è¾“å…¥ç”Ÿå‘½å€¼" << endl;
 		cin >> temp.p_hp;
-		cout << "ÇëÊäÈëÎïÀí¹¥»÷Öµ" << endl;
+		cout << "è¯·è¾“å…¥ç‰©ç†æ”»å‡»å€¼" << endl;
 		cin >> temp.p_atk;
 		s[order].modi(s[order].getName(), temp.p_age, temp.p_level, temp.p_hp, temp.p_atk);
 	}
-	else cout << "½£Ê¿²»´æÔÚ£¬ĞŞ¸ÄÊ§°Ü£¡" << endl;
+	else cout << "å‰‘å£«ä¸å­˜åœ¨ï¼Œä¿®æ”¹å¤±è´¥ï¼" << endl;
 }
 void guild::modiM()
 {
 	pro temp;
 	uint order = 0;
 	int search_flag = 0;
-	cout << "ÕıÔÚĞŞ¸ÄÄ§·¨Ê¦ĞÅÏ¢" << endl;
+	cout << "æ­£åœ¨ä¿®æ”¹é­”æ³•å¸ˆä¿¡æ¯" << endl;
 	pro_title();
 	displayM();
-	cout << "ÇëÊäÈëÒªĞŞ¸ÄÊôĞÔµÄÄ§·¨Ê¦ĞÕÃû" << endl;
+	cout << "è¯·è¾“å…¥è¦ä¿®æ”¹å±æ€§çš„é­”æ³•å¸ˆå§“å" << endl;
 	cin >> temp.p_name;
 	for (order = 0; order < m_num; order++)
 	{
@@ -512,28 +512,28 @@ void guild::modiM()
 	}
 	if (search_flag)
 	{
-		cout << "\nÒÑÕÒµ½Ãû³Æ: " << temp.p_name << " µÄÄ§·¨Ê¦£¬ÕıÔÚ½øĞĞĞŞ¸Ä" << endl;
-		cout << "ÇëÊäÈëÄêÁä" << endl;
+		cout << "\nå·²æ‰¾åˆ°åç§°: " << temp.p_name << " çš„é­”æ³•å¸ˆï¼Œæ­£åœ¨è¿›è¡Œä¿®æ”¹" << endl;
+		cout << "è¯·è¾“å…¥å¹´é¾„" << endl;
 		cin >> temp.p_age;
-		cout << "ÇëÊäÈëµÈ¼¶" << endl;
+		cout << "è¯·è¾“å…¥ç­‰çº§" << endl;
 		cin >> temp.p_level;
-		cout << "ÇëÊäÈëÉúÃüÖµ" << endl;
+		cout << "è¯·è¾“å…¥ç”Ÿå‘½å€¼" << endl;
 		cin >> temp.p_hp;
-		cout << "ÇëÊäÈëÄ§·¨¹¥»÷Öµ" << endl;
+		cout << "è¯·è¾“å…¥é­”æ³•æ”»å‡»å€¼" << endl;
 		cin >> temp.p_mga;
 		m[order].modi(m[order].getName(), temp.p_age, temp.p_level, temp.p_hp, temp.p_mga);
 	}
-	else cout << "Ä§·¨Ê¦²»´æÔÚ£¬ĞŞ¸ÄÊ§°Ü£¡" << endl;
+	else cout << "é­”æ³•å¸ˆä¸å­˜åœ¨ï¼Œä¿®æ”¹å¤±è´¥ï¼" << endl;
 }
 void guild::delS()
 {
-	string s_name; //ÓÃÓÚ»ñÈ¡´ıÒÆ³ö¹«»áµÄ½£Ê¿ĞÕÃû
-	int del_flag = 0; //É¾³ı±êÖ¾Î»£¬Èç¹ûÉ¾³ı³É¹¦Îª1£¬·ñÔòÎª0
+	string s_name; //ç”¨äºè·å–å¾…ç§»å‡ºå…¬ä¼šçš„å‰‘å£«å§“å
+	int del_flag = 0; //åˆ é™¤æ ‡å¿—ä½ï¼Œå¦‚æœåˆ é™¤æˆåŠŸä¸º1ï¼Œå¦åˆ™ä¸º0
 	if (s_num > 0)
 	{
 		pro_title();
 		displayS();
-		cout << "ÇëÊäÈëĞèÒªÀë¿ª¹«»áµÄ½£Ê¿µÄĞÕÃû" << endl;
+		cout << "è¯·è¾“å…¥éœ€è¦ç¦»å¼€å…¬ä¼šçš„å‰‘å£«çš„å§“å" << endl;
 		cin >> s_name;
 		for (uint i = 0; i < s_num; i++)
 		{
@@ -555,22 +555,22 @@ void guild::delS()
 		}
 		if (del_flag == 1)
 		{
-			s[s_num - 1].modi("0", 0, 0, 0, 0); //Ğ´ÈëÁãÄ¨³ıÊı¾İ
+			s[s_num - 1].modi("0", 0, 0, 0, 0); //å†™å…¥é›¶æŠ¹é™¤æ•°æ®
 			s_num--;
 		}
 		else
 		{
-			cout << "²éÎŞ´ËÈË£¬ÒÆ³öÊ§°Ü" << endl;
+			cout << "æŸ¥æ— æ­¤äººï¼Œç§»å‡ºå¤±è´¥" << endl;
 		}
 	}
 	else
 	{
-		cout << "ÈËÊı²»×ã£¬É¾³ıÊ§°Ü£¡" << endl;
+		cout << "äººæ•°ä¸è¶³ï¼Œåˆ é™¤å¤±è´¥ï¼" << endl;
 	}
 }
 void guild::delS(string s_name)
 {
-	int del_flag = 0; //É¾³ı±êÖ¾Î»£¬Èç¹ûÉ¾³ı³É¹¦Îª1£¬·ñÔòÎª0
+	int del_flag = 0; //åˆ é™¤æ ‡å¿—ä½ï¼Œå¦‚æœåˆ é™¤æˆåŠŸä¸º1ï¼Œå¦åˆ™ä¸º0
 	if (s_num > 0)
 	{
 		for (uint i = 0; i < s_num; i++)
@@ -593,28 +593,28 @@ void guild::delS(string s_name)
 		}
 		if (del_flag == 1)
 		{
-			s[s_num - 1].modi("0", 0, 0, 0, 0); //Ğ´ÈëÁãÄ¨³ıÊı¾İ
+			s[s_num - 1].modi("0", 0, 0, 0, 0); //å†™å…¥é›¶æŠ¹é™¤æ•°æ®
 			s_num--;
 		}
 		else
 		{
-			cout << "²éÎŞ´ËÈË£¬ÒÆ³öÊ§°Ü" << endl;
+			cout << "æŸ¥æ— æ­¤äººï¼Œç§»å‡ºå¤±è´¥" << endl;
 		}
 	}
 	else
 	{
-		cout << "ÈËÊı²»×ã£¬É¾³ıÊ§°Ü£¡" << endl;
+		cout << "äººæ•°ä¸è¶³ï¼Œåˆ é™¤å¤±è´¥ï¼" << endl;
 	}
 }
 void guild::delM()
 {
-	string m_name; //ÓÃÓÚ»ñÈ¡´ıÒÆ³ö¹«»áµÄÄ§·¨Ê¦ĞÕÃû
-	int del_flag = 0; //É¾³ı±êÖ¾Î»£¬Èç¹ûÉ¾³ı³É¹¦Îª1£¬·ñÔòÎª0
+	string m_name; //ç”¨äºè·å–å¾…ç§»å‡ºå…¬ä¼šçš„é­”æ³•å¸ˆå§“å
+	int del_flag = 0; //åˆ é™¤æ ‡å¿—ä½ï¼Œå¦‚æœåˆ é™¤æˆåŠŸä¸º1ï¼Œå¦åˆ™ä¸º0
 	if (m_num > 0)
 	{
 		pro_title();
 		displayM();
-		cout << "ÇëÊäÈëĞèÒªÀë¿ª¹«»áµÄÄ§·¨Ê¦µÄĞÕÃû" << endl;
+		cout << "è¯·è¾“å…¥éœ€è¦ç¦»å¼€å…¬ä¼šçš„é­”æ³•å¸ˆçš„å§“å" << endl;
 		cin >> m_name;
 		for (uint i = 0; i < m_num; i++)
 		{
@@ -636,22 +636,22 @@ void guild::delM()
 		}
 		if (del_flag == 1)
 		{
-			m[s_num - 1].modi("0", 0, 0, 0, 0); //Ğ´ÈëÁãÄ¨³ıÊı¾İ
+			m[s_num - 1].modi("0", 0, 0, 0, 0); //å†™å…¥é›¶æŠ¹é™¤æ•°æ®
 			m_num--;
 		}
 		else
 		{
-			cout << "²éÎŞ´ËÈË£¬ÒÆ³öÊ§°Ü" << endl;
+			cout << "æŸ¥æ— æ­¤äººï¼Œç§»å‡ºå¤±è´¥" << endl;
 		}
 	}
 	else
 	{
-		cout << "ÈËÊı²»×ã£¬É¾³ıÊ§°Ü£¡" << endl;
+		cout << "äººæ•°ä¸è¶³ï¼Œåˆ é™¤å¤±è´¥ï¼" << endl;
 	}
 }
 void guild::delM(string m_name)
 {
-	int del_flag = 0; //É¾³ı±êÖ¾Î»£¬Èç¹ûÉ¾³ı³É¹¦Îª1£¬·ñÔòÎª0
+	int del_flag = 0; //åˆ é™¤æ ‡å¿—ä½ï¼Œå¦‚æœåˆ é™¤æˆåŠŸä¸º1ï¼Œå¦åˆ™ä¸º0
 	if (m_num > 0)
 	{
 		for (uint i = 0; i < m_num; i++)
@@ -674,24 +674,24 @@ void guild::delM(string m_name)
 		}
 		if (del_flag == 1)
 		{
-			m[s_num - 1].modi("0", 0, 0, 0, 0); //Ğ´ÈëÁãÄ¨³ıÊı¾İ
+			m[s_num - 1].modi("0", 0, 0, 0, 0); //å†™å…¥é›¶æŠ¹é™¤æ•°æ®
 			m_num--;
 		}
 		else
 		{
-			cout << "²éÎŞ´ËÈË£¬ÒÆ³öÊ§°Ü" << endl;
+			cout << "æŸ¥æ— æ­¤äººï¼Œç§»å‡ºå¤±è´¥" << endl;
 		}
 	}
 	else
 	{
-		cout << "ÈËÊı²»×ã£¬É¾³ıÊ§°Ü£¡" << endl;
+		cout << "äººæ•°ä¸è¶³ï¼Œåˆ é™¤å¤±è´¥ï¼" << endl;
 	}
 }
 void guild::promotion()
 {
 	int search_flag = 0;
 	string temp;
-	cout << "ÇëÊäÈëÏëÒªÉıÖ°µÄ¶ÓÔ±ĞÕÃû" << endl;
+	cout << "è¯·è¾“å…¥æƒ³è¦å‡èŒçš„é˜Ÿå‘˜å§“å" << endl;
 	cin >> temp;
 	for (uint i = 0; i < s_num; i++)
 	{
@@ -715,8 +715,8 @@ void guild::promotion()
 			break;
 		}
 	}
-	if (search_flag)cout << "¹§Ï² " << temp << " ÈÙÉı»á³¤\nÀÏ»á³¤¹âÈÙÍËĞİ£¡" << endl;
-	else cout << "ÎŞ·¨ÕÒµ½´ıÌá°ÎÈËÔ±" << endl;
+	if (search_flag)cout << "æ­å–œ " << temp << " è£å‡ä¼šé•¿\nè€ä¼šé•¿å…‰è£é€€ä¼‘ï¼" << endl;
+	else cout << "æ— æ³•æ‰¾åˆ°å¾…ææ‹”äººå‘˜" << endl;
 }
 void guild::searchS(string t_name)
 {
@@ -725,7 +725,7 @@ void guild::searchS(string t_name)
 	{
 		if (s[i].getName() == t_name)
 		{
-			cout << "ÒÑÕÒµ½ " << t_name << " µÄĞÅÏ¢" << endl;
+			cout << "å·²æ‰¾åˆ° " << t_name << " çš„ä¿¡æ¯" << endl;
 			pro_title();
 			s[i].printAtt("row");
 			search_flag = 1;
@@ -734,7 +734,7 @@ void guild::searchS(string t_name)
 	}
 	if (search_flag == 0)
 	{
-		cout << "²éÎŞ´ËÈË" << endl;
+		cout << "æŸ¥æ— æ­¤äºº" << endl;
 	}
 }
 void guild::searchM(string t_name)
@@ -744,7 +744,7 @@ void guild::searchM(string t_name)
 	{
 		if (m[i].getName() == t_name)
 		{
-			cout << "ÒÑÕÒµ½ " << t_name << " µÄĞÅÏ¢" << endl;
+			cout << "å·²æ‰¾åˆ° " << t_name << " çš„ä¿¡æ¯" << endl;
 			pro_title();
 			m[i].printAtt("row");
 			search_flag = 1;
@@ -752,7 +752,7 @@ void guild::searchM(string t_name)
 	}
 	if (search_flag == 0)
 	{
-		cout << "²éÎŞ´ËÈË" << endl;
+		cout << "æŸ¥æ— æ­¤äºº" << endl;
 	}
 }
 void guild::search(string t_name)
@@ -762,7 +762,7 @@ void guild::search(string t_name)
 	{
 		if (s[i].getName() == t_name)
 		{
-			cout << "ÒÑÕÒµ½ " << t_name << " µÄĞÅÏ¢" << endl;
+			cout << "å·²æ‰¾åˆ° " << t_name << " çš„ä¿¡æ¯" << endl;
 			pro_title();
 			s[i].printAtt("row");
 			search_flag = 1;
@@ -773,7 +773,7 @@ void guild::search(string t_name)
 	{
 		if (m[i].getName() == t_name)
 		{
-			cout << "ÒÑÕÒµ½ " << t_name << " µÄĞÅÏ¢" << endl;
+			cout << "å·²æ‰¾åˆ° " << t_name << " çš„ä¿¡æ¯" << endl;
 			pro_title();
 			m[i].printAtt("row");
 			search_flag = 1;
@@ -781,7 +781,7 @@ void guild::search(string t_name)
 	}
 	if (search_flag == 0)
 	{
-		cout << "²éÎŞ´ËÈË" << endl;
+		cout << "æŸ¥æ— æ­¤äºº" << endl;
 	}
 }
 void guild::load(string csvFileName)
@@ -797,7 +797,7 @@ void guild::load(string csvFileName)
 		string career;
 		uint i = 0;
 		uint max = 7;
-		while (getline(ss, str, ',')) //ÒÔ¶ººÅ·Ö¸ô»ñÈ¡µ¥¸ö×Ö·û´®
+		while (getline(ss, str, ',')) //ä»¥é€—å·åˆ†éš”è·å–å•ä¸ªå­—ç¬¦ä¸²
 		{
 			if (i >= max)break;
 			switch (i)
@@ -867,11 +867,11 @@ void guild::display()
 	system("cls");
 	if (ma.getName() == "0")
 	{
-		cout << "»á³¤Î»ÖÃĞéÎ»ÒÔ´ı£¡" << endl;
+		cout << "ä¼šé•¿ä½ç½®è™šä½ä»¥å¾…ï¼" << endl;
 	}
-	else { cout << "»á³¤Îª£º" << ma.getName() << endl; }
-	cout << "¹«»áÖĞÓĞ" << s_num << "Ãû½£Ê¿" << endl;
-	cout << "¹«»áÖĞÓĞ" << m_num << "ÃûÄ§·¨Ê¦" << endl;
+	else { cout << "ä¼šé•¿ä¸ºï¼š" << ma.getName() << endl; }
+	cout << "å…¬ä¼šä¸­æœ‰" << s_num << "åå‰‘å£«" << endl;
+	cout << "å…¬ä¼šä¸­æœ‰" << m_num << "åé­”æ³•å¸ˆ" << endl;
 	pro_title();
 	if (ma.getName() != "0")
 	{
